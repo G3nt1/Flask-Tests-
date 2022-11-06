@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+><ul>
+{% block contents %}
+<div>
+
+    {% for x in user %}
+   
+        <h3>{{x.fname}}</h3>
+ 
+   
+        <h3>{{ x.lname}}</h3>
+   
+   
+        <p>{{ x.uname}}</p>
+   
+<form action="/users/{{x.id}}/delete"  method="post">
+    <input type="submit" value="Delete user"/>
+</form>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

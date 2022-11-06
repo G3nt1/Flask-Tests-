@@ -1,0 +1,78 @@
+Postim:
+    Create
+    Read
+    Update
+    Delete
+
+CRUD
+
+postim(id, title, contents, created_at, user_id)
+
+
+1, "Hello", "Ky eshte postimi im i pare", "2022-01-01 00:00:00", 1
+2, "Hello", "Ky eshte postimi im i pare", "2022-01-01 00:00:00", 1
+
+
+LIST
+
+GET     /posts  -> listo te gjitha postimet
+
+
+CREATE
+
+
+GET     /posts/new -> render template formen
+POST    /posts/new -> bej submit te dhenat ne db
+
+READ
+@app.route("/posts/<int:id>")
+
+GET     /posts/1 -> query db per ate rekord. SELECT * FROM POSTS WHERE ID = %s, (id,)
+
+
+UPDATE
+
+GET    /posts/1/edit -> render formen
+POST   /posts/1/edit -> upate db me te dhenat e formes
+
+DELETE
+
+POST   /posts/1/delete
+
+
+
+TEMPLATE
+
+cdo "resource" ka direktorine e tij. Postim, Produkt etj
+
+cdo veprim CRUD ka template te tij nese duhet te shfaqi dicka.
+
+LIST        posts/list.html
+CREATE      posts/new.html
+READ        posts/show.html
+UPDATE      posts/edit.html - ose posts/new.html nese mund te riperdoret
+DELETE      nuk ka nevoje per template
+
+
+HTTP STATUS CODES
+
+1xx -> INFO
+
+2xx -> OK
+    -> 200 OK
+    -> 201 CREATED
+
+3xx -> REDIRECT/MOVED
+    -> 301 MOVED PERMANENTLY
+
+4xx -> CLIENT ERROR
+    -> 400 Invalid Request
+    -> 401 Unauthorized
+    -> 403 Forbidden
+    -> 404 Not found
+    -> 405 Method not allowed
+
+5xx -> SERVER ERROR
+    -> 500 Server Error
+    -> 502 Gateway error
+    -> 504 Gateway timeout

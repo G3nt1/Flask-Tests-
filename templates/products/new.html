@@ -1,0 +1,29 @@
+{% extends 'layout.html' %} 
+{% block contents %}
+    <h1>Register Products</h1>
+    <div class="input-group"  align ="center" class="border">
+
+    <form action="/products" method="POST">
+        <label class="form-label">Product</label>
+        <input type="text" id="prod" name="prod" aria-label="product" class="form-control" placeholder="Enter a Product">
+    
+        <label class="form-label">Price</label>
+        <input type="number" id="price" name="price"  aria-label="price" class="form-control" placeholder="Enter a Price">
+        <br>
+        <label class="form-label">Description</label>
+        <br>
+        <textarea id="desc" name="desc" rows="4" cols="50"></textarea>
+
+        <br><br>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+    <img src="/static/pngegg.png" alt="car" width="500" height="400"> 
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Here You can Register any product like car, electronics, fruits!!!!!.</p>
+        <hr>
+        <p class="mb-0">Desctription must be very good specified!!!!!!</p>
+      </div>
+    
+    {% endblock %}

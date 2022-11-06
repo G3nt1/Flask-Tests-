@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block contents %}
+   
+  <div>
+    <h1>Post</h1>
+    <form method="POST">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="title" placeholder="Enter a title">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Write a Post</label>
+        <textarea class="form-control" name="body_post" id="exampleFormControlTextarea1" rows="4"></textarea>
+      </div>
+      <button type="submit" name="send" class="btn btn-primary btn-lg">Send</button>
+    </form>
+    <img src="/static/LameEdibleJohndory-max-1mb.gif" alt="post" width="600" height="280"> 
+  </div>
+  
+  
+  {% endblock %}

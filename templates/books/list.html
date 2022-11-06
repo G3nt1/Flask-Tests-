@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block contents %}
+<div>
+{% for x in books %}
+   <h2> {{ x.title }} </h2>
+  <h2> {{ x.author}} </h2>
+  <p>  {{ x.desctription }} </p>
+
+    
+    <form action="/books/{{ x.id }}/delete"  method="post">
+      <input type="submit" value="Delete Books"/>
+      {% endfor %}
+    </form>
+  </div>
+{% endblock %} 

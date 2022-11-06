@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block contents %}
+<div>
+    <h1>REGISTER</h1>
+  
+        
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {% for message in get_flashed_messages() %}
+           <strong>{{ message }}</strong> 
+        {% endfor %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    
+    
+        <div class="input-group"  align="center" class="border">
+            <form action="" method="POST">
+            <input type="text" id="fname" name="fname" aria-label="First name" class="form-control" placeholder="Enter a fname">
+            <br>
+            <input type="text" id="lname" name="lname"  aria-label="Last name" class="form-control" placeholder="Enter a lname">
+            <br>
+            <input type="text" id="uname" name="uname"  aria-label="Last name" class="form-control" placeholder="Enter a username">
+            <br>
+            <input type="password" id="pass" name="pass"  aria-label="Last name" class="form-control" placeholder="Enter a Password">
+            <br>
+            <button type="submit" class="btn btn-outline-danger">Register</button>
+        </form>
+        </div>
+        <img src="/static/toppng.com-dow-chemical-webinar-register-here-button-942x415.png" alt="car" width="500" height="300">
+  </div>
+
+{% endblock %}
